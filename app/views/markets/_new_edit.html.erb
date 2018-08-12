@@ -1,0 +1,32 @@
+<%= form_with model: @market, local: true do |f| %>
+	
+	<% if @market.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@market.errors.count, 'error') %> prohibited this market from being saved:
+			</h2>
+			<ul>
+				<% @market.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :website %><br />
+		<%= f.text_field :website %> 
+	</p>
+	<p>
+		<%= f.label :adapter_name %><br />
+		<%= f.text_field :adapter_name %> 
+	</p>
+	<p>
+		<%= f.submit 'Save market' %>
+	</p>
+
+<% end %>

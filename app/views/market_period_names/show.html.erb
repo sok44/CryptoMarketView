@@ -1,0 +1,19 @@
+<h1>Show market period name <%= @market_period_name.name %></h1>
+
+<p>
+	Market: <%= @market_period_name.market.name %> 
+</p>
+<p>
+	Period quotation type: <%= @market_period_name.period_quotation_type.short_name %>
+</p>
+<p>
+	Name: <%= @market_period_name.name %>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_market_period_name_path(@market_period_name) %> |
+	<%= link_to 'Back to listing market period names', market_period_names_path %>
+</p>
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

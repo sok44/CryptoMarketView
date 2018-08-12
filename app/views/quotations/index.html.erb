@@ -1,0 +1,66 @@
+<h1>Listing quotations</h1>
+
+<p>
+	<%= link_to 'New quotation', new_quotation_path %>
+</p>
+
+<p>
+	<h4>Filters</h4>
+	<!--Так делать правильно? Уточнить, скорее всего не правильно т.к. куда сохранять другой фильтр например кол-во котировок -->
+
+	<%= form_with model: @quotation, url: quotations_path, method: "get", local: true do |f| %>
+		<p>
+			<%= f.label 'Market' %><br />
+			<%= f.collection_select(:market_id, Market.all, :id, :name, include_blank: true) %>	
+		</p>
+		<p>
+			<%= f.label 'Currency pair' %><br />
+			<%= f.collection_select(:currency_pair_id, CurrencyPair.all, :id, :name, include_blank: true) %>	
+		</p>
+		<p>
+			<%= f.label 'Period quotation type' %><br />
+			<%= f.collection_select(:period_quotation_type_id, PeriodQuotationType.all, :id, :short_name) %>	
+		</p>
+		<p>
+		<%= f.submit 'Apply filters' %>
+	</p>
+	<% end %>
+</p>
+
+<table>
+	<tr>
+		<th>Market</th>
+		<th>Currency pair</th>
+		<th>Period</th>
+		<th>Datetime</th>
+		<th>Open</th>
+		<th>High</th>
+		<th>Low</th>
+		<th>Close</th>
+		<th>Volume</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @quotations.each do |quotation| %>
+		<tr>
+			<td><%= quotation.market.name %></td>
+			<td><%= quotation.currency_pair.name %></td>
+			<td><%= quotation.period_quotation_type.short_name %></td>
+			<td><%= quotation.datetime_tick %></td>
+			<td><%= quotation.open_tick %></td>
+			<td><%= quotation.high_tick %></td>
+			<td><%= quotation.low_tick %></td>
+			<td><%= quotation.close_tick %></td>
+			<td><%= quotation.volume_tick %></td>
+			<td><%= link_to 'Show', quotation_path(quotation) %></td>
+			<td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>		
+			<td><%= link_to 'Destroy', quotation_path(quotation), method: :delete, data: {confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

@@ -1,0 +1,917 @@
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (80.0ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (92.5ms)[0m  [1m[31mDELETE FROM "markets";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'markets';[0m
+  [1m[35m (87.5ms)[0m  [1m[31mDELETE FROM "currencies";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currencies';[0m
+  [1m[35m (87.5ms)[0m  [1m[31mDELETE FROM "currency_pairs";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currency_pairs';[0m
+  [1m[35m (90.0ms)[0m  [1m[31mDELETE FROM "market_symbol_precisions";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_symbol_precisions';[0m
+  [1m[35m (92.5ms)[0m  [1m[31mDELETE FROM "time_intervals";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'time_intervals';[0m
+  [1m[35m (90.0ms)[0m  [1m[31mDELETE FROM "period_quotation_types";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'period_quotation_types';[0m
+  [1m[35m (97.5ms)[0m  [1m[31mDELETE FROM "quotations";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'quotations';[0m
+  [1m[35m (80.0ms)[0m  [1m[31mDELETE FROM "market_period_names";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_period_names';[0m
+  [1m[35m (85.0ms)[0m  [1m[31mDELETE FROM "market_currency_pair_names";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_currency_pair_names';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.227333"], ["updated_at", "2018-08-12 10:21:51.227333"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.254834"], ["updated_at", "2018-08-12 10:21:51.254834"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:51.402336"], ["updated_at", "2018-08-12 10:21:51.402336"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:51.454837"], ["updated_at", "2018-08-12 10:21:51.454837"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.577339"], ["updated_at", "2018-08-12 10:21:51.577339"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.602339"], ["updated_at", "2018-08-12 10:21:51.602339"]]
+  [1m[35m (2.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:51.612339"], ["updated_at", "2018-08-12 10:21:51.612339"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:51.617339"], ["updated_at", "2018-08-12 10:21:51.617339"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:51.687340"], ["updated_at", "2018-08-12 10:21:51.687340"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.712341"], ["updated_at", "2018-08-12 10:21:51.712341"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.719841"], ["updated_at", "2018-08-12 10:21:51.719841"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (2.5ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:51.727341"], ["updated_at", "2018-08-12 10:21:51.727341"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "market_symbol_precisions" ("currency_pair_id", "market_id", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["tick_precision", 1000000], ["volume_precision", 10000000], ["created_at", "2018-08-12 10:21:51.769842"], ["updated_at", "2018-08-12 10:21:51.769842"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:51.819842"], ["updated_at", "2018-08-12 10:21:51.819842"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.844843"], ["updated_at", "2018-08-12 10:21:51.844843"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.852343"], ["updated_at", "2018-08-12 10:21:51.852343"]]
+  [1m[35m (2.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:51.857343"], ["updated_at", "2018-08-12 10:21:51.857343"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "market_symbol_precisions" ("currency_pair_id", "market_id", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["tick_precision", 1000000], ["volume_precision", 10000000], ["created_at", "2018-08-12 10:21:51.884843"], ["updated_at", "2018-08-12 10:21:51.884843"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.944844"], ["updated_at", "2018-08-12 10:21:51.944844"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:51.967345"], ["updated_at", "2018-08-12 10:21:51.967345"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (2.5ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:51.977345"], ["updated_at", "2018-08-12 10:21:51.977345"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:51.982345"], ["updated_at", "2018-08-12 10:21:51.982345"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (22.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:52.029846"], ["updated_at", "2018-08-12 10:21:52.029846"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:52.054846"], ["updated_at", "2018-08-12 10:21:52.054846"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:52.062346"], ["updated_at", "2018-08-12 10:21:52.062346"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:52.067346"], ["updated_at", "2018-08-12 10:21:52.067346"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:52.119847"], ["updated_at", "2018-08-12 10:21:52.119847"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:52.147347"], ["updated_at", "2018-08-12 10:21:52.147347"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:52.154848"], ["updated_at", "2018-08-12 10:21:52.154848"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:52.167348"], ["updated_at", "2018-08-12 10:21:52.167348"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (40.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (22.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:52.219849"], ["updated_at", "2018-08-12 10:21:52.219849"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:21:52.244849"], ["updated_at", "2018-08-12 10:21:52.244849"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:21:52.254849"], ["updated_at", "2018-08-12 10:21:52.254849"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:21:52.262349"], ["updated_at", "2018-08-12 10:21:52.262349"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (77.5ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (5.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (80.0ms)[0m  [1m[31mDELETE FROM "markets";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'markets';[0m
+  [1m[35m (85.0ms)[0m  [1m[31mDELETE FROM "currencies";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currencies';[0m
+  [1m[35m (105.0ms)[0m  [1m[31mDELETE FROM "currency_pairs";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currency_pairs';[0m
+  [1m[35m (90.0ms)[0m  [1m[31mDELETE FROM "market_symbol_precisions";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_symbol_precisions';[0m
+  [1m[35m (122.5ms)[0m  [1m[31mDELETE FROM "time_intervals";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'time_intervals';[0m
+  [1m[35m (87.5ms)[0m  [1m[31mDELETE FROM "period_quotation_types";[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'period_quotation_types';[0m
+  [1m[35m (112.0ms)[0m  [1m[31mDELETE FROM "quotations";[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'quotations';[0m
+  [1m[35m (136.5ms)[0m  [1m[31mDELETE FROM "market_period_names";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_period_names';[0m
+  [1m[35m (87.0ms)[0m  [1m[31mDELETE FROM "market_currency_pair_names";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_currency_pair_names';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (22.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:31.748566"], ["updated_at", "2018-08-12 10:27:31.748566"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:31.773566"], ["updated_at", "2018-08-12 10:27:31.773566"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:31.970573"], ["updated_at", "2018-08-12 10:27:31.970573"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.038074"], ["updated_at", "2018-08-12 10:27:32.038074"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.185576"], ["updated_at", "2018-08-12 10:27:32.185576"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.213076"], ["updated_at", "2018-08-12 10:27:32.213076"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:32.223077"], ["updated_at", "2018-08-12 10:27:32.223077"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.230577"], ["updated_at", "2018-08-12 10:27:32.230577"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (42.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (22.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.365581"], ["updated_at", "2018-08-12 10:27:32.365581"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.400583"], ["updated_at", "2018-08-12 10:27:32.400583"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.414584"], ["updated_at", "2018-08-12 10:27:32.414584"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:32.427585"], ["updated_at", "2018-08-12 10:27:32.427585"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "market_symbol_precisions" ("currency_pair_id", "market_id", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["tick_precision", 1000000], ["volume_precision", 10000000], ["created_at", "2018-08-12 10:27:32.472585"], ["updated_at", "2018-08-12 10:27:32.472585"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (40.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (22.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.527586"], ["updated_at", "2018-08-12 10:27:32.527586"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.562587"], ["updated_at", "2018-08-12 10:27:32.562587"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.570087"], ["updated_at", "2018-08-12 10:27:32.570087"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:32.588587"], ["updated_at", "2018-08-12 10:27:32.588587"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "market_symbol_precisions" ("currency_pair_id", "market_id", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["tick_precision", 1000000], ["volume_precision", 10000000], ["created_at", "2018-08-12 10:27:32.599588"], ["updated_at", "2018-08-12 10:27:32.599588"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (44.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.672091"], ["updated_at", "2018-08-12 10:27:32.672091"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.694591"], ["updated_at", "2018-08-12 10:27:32.694591"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:32.704591"], ["updated_at", "2018-08-12 10:27:32.704591"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.709591"], ["updated_at", "2018-08-12 10:27:32.709591"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (32.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.757092"], ["updated_at", "2018-08-12 10:27:32.757092"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.779592"], ["updated_at", "2018-08-12 10:27:32.779592"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:32.789593"], ["updated_at", "2018-08-12 10:27:32.789593"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.797093"], ["updated_at", "2018-08-12 10:27:32.797093"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (40.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (25.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.859594"], ["updated_at", "2018-08-12 10:27:32.859594"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.887094"], ["updated_at", "2018-08-12 10:27:32.887094"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:32.902094"], ["updated_at", "2018-08-12 10:27:32.902094"]]
+  [1m[35m (2.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.904594"], ["updated_at", "2018-08-12 10:27:32.904594"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.954595"], ["updated_at", "2018-08-12 10:27:32.954595"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:32.977095"], ["updated_at", "2018-08-12 10:27:32.977095"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:32.984596"], ["updated_at", "2018-08-12 10:27:32.984596"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:32.989596"], ["updated_at", "2018-08-12 10:27:32.989596"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:33.042096"], ["updated_at", "2018-08-12 10:27:33.042096"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:33.067097"], ["updated_at", "2018-08-12 10:27:33.067097"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:33.072097"], ["updated_at", "2018-08-12 10:27:33.072097"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:33.077097"], ["updated_at", "2018-08-12 10:27:33.077097"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (32.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:33.122098"], ["updated_at", "2018-08-12 10:27:33.122098"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:27:33.149598"], ["updated_at", "2018-08-12 10:27:33.149598"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:27:33.162098"], ["updated_at", "2018-08-12 10:27:33.162098"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:27:33.167098"], ["updated_at", "2018-08-12 10:27:33.167098"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (82.5ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (82.5ms)[0m  [1m[31mDELETE FROM "markets";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'markets';[0m
+  [1m[35m (80.0ms)[0m  [1m[31mDELETE FROM "currencies";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currencies';[0m
+  [1m[35m (87.5ms)[0m  [1m[31mDELETE FROM "currency_pairs";[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currency_pairs';[0m
+  [1m[35m (90.0ms)[0m  [1m[31mDELETE FROM "market_symbol_precisions";[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_symbol_precisions';[0m
+  [1m[35m (87.5ms)[0m  [1m[31mDELETE FROM "time_intervals";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'time_intervals';[0m
+  [1m[35m (82.5ms)[0m  [1m[31mDELETE FROM "period_quotation_types";[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'period_quotation_types';[0m
+  [1m[35m (92.5ms)[0m  [1m[31mDELETE FROM "quotations";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'quotations';[0m
+  [1m[35m (87.5ms)[0m  [1m[31mDELETE FROM "market_period_names";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_period_names';[0m
+  [1m[35m (87.5ms)[0m  [1m[31mDELETE FROM "market_currency_pair_names";[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_currency_pair_names';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:50.607155"], ["updated_at", "2018-08-12 10:30:50.607155"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:50.629655"], ["updated_at", "2018-08-12 10:30:50.629655"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:50.744657"], ["updated_at", "2018-08-12 10:30:50.744657"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:50.779658"], ["updated_at", "2018-08-12 10:30:50.779658"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (42.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:50.887159"], ["updated_at", "2018-08-12 10:30:50.887159"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:50.912160"], ["updated_at", "2018-08-12 10:30:50.912160"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:50.919660"], ["updated_at", "2018-08-12 10:30:50.919660"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:50.932160"], ["updated_at", "2018-08-12 10:30:50.932160"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (2.5ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:50.992161"], ["updated_at", "2018-08-12 10:30:50.992161"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.014661"], ["updated_at", "2018-08-12 10:30:51.014661"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.022161"], ["updated_at", "2018-08-12 10:30:51.022161"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.027162"], ["updated_at", "2018-08-12 10:30:51.027162"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "market_symbol_precisions" ("currency_pair_id", "market_id", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["tick_precision", 1000000], ["volume_precision", 10000000], ["created_at", "2018-08-12 10:30:51.057162"], ["updated_at", "2018-08-12 10:30:51.057162"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.102163"], ["updated_at", "2018-08-12 10:30:51.102163"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.124663"], ["updated_at", "2018-08-12 10:30:51.124663"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.129663"], ["updated_at", "2018-08-12 10:30:51.129663"]]
+  [1m[35m (2.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.137163"], ["updated_at", "2018-08-12 10:30:51.137163"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (2.5ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "market_symbol_precisions" ("currency_pair_id", "market_id", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["tick_precision", 1000000], ["volume_precision", 10000000], ["created_at", "2018-08-12 10:30:51.142163"], ["updated_at", "2018-08-12 10:30:51.142163"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (42.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.207164"], ["updated_at", "2018-08-12 10:30:51.207164"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.229665"], ["updated_at", "2018-08-12 10:30:51.229665"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.237165"], ["updated_at", "2018-08-12 10:30:51.237165"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.239665"], ["updated_at", "2018-08-12 10:30:51.239665"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.287166"], ["updated_at", "2018-08-12 10:30:51.287166"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.307166"], ["updated_at", "2018-08-12 10:30:51.307166"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.314666"], ["updated_at", "2018-08-12 10:30:51.314666"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.322166"], ["updated_at", "2018-08-12 10:30:51.322166"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.364667"], ["updated_at", "2018-08-12 10:30:51.364667"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.389667"], ["updated_at", "2018-08-12 10:30:51.389667"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.397167"], ["updated_at", "2018-08-12 10:30:51.397167"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.402167"], ["updated_at", "2018-08-12 10:30:51.402167"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.444668"], ["updated_at", "2018-08-12 10:30:51.444668"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.469668"], ["updated_at", "2018-08-12 10:30:51.469668"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.474668"], ["updated_at", "2018-08-12 10:30:51.474668"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.477168"], ["updated_at", "2018-08-12 10:30:51.477168"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (32.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.522169"], ["updated_at", "2018-08-12 10:30:51.522169"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.544669"], ["updated_at", "2018-08-12 10:30:51.544669"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.552170"], ["updated_at", "2018-08-12 10:30:51.552170"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.554670"], ["updated_at", "2018-08-12 10:30:51.554670"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (32.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.599670"], ["updated_at", "2018-08-12 10:30:51.599670"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.624671"], ["updated_at", "2018-08-12 10:30:51.624671"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (2.5ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.632171"], ["updated_at", "2018-08-12 10:30:51.632171"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.639671"], ["updated_at", "2018-08-12 10:30:51.639671"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (37.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.684672"], ["updated_at", "2018-08-12 10:30:51.684672"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.707172"], ["updated_at", "2018-08-12 10:30:51.707172"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.712172"], ["updated_at", "2018-08-12 10:30:51.712172"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.719672"], ["updated_at", "2018-08-12 10:30:51.719672"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (32.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.769673"], ["updated_at", "2018-08-12 10:30:51.769673"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.792173"], ["updated_at", "2018-08-12 10:30:51.792173"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (2.5ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.799673"], ["updated_at", "2018-08-12 10:30:51.799673"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.804673"], ["updated_at", "2018-08-12 10:30:51.804673"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.854674"], ["updated_at", "2018-08-12 10:30:51.854674"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-12 10:30:51.874675"], ["updated_at", "2018-08-12 10:30:51.874675"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-12 10:30:51.884675"], ["updated_at", "2018-08-12 10:30:51.884675"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-12 10:30:51.889675"], ["updated_at", "2018-08-12 10:30:51.889675"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (32.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.5ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m

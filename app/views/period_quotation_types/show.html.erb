@@ -1,0 +1,21 @@
+<h1>Show period quotation type <%= @period_quotation_type.long_name %></h1>
+
+<p>
+	Long name: <%= @period_quotation_type.long_name %>
+</p>
+<p>
+	Short name: <%= @period_quotation_type.short_name %>
+</p>
+<p>
+	Time interval: <%= @period_quotation_type.time_interval.name %> 
+</p>
+<p>
+	Count intervals: <%= @period_quotation_type.count_intervals %> 
+</p>
+<p>
+	<%= link_to 'Edit', edit_period_quotation_type_path(@period_quotation_type) %> | 
+	<%= link_to 'Back to listing period quotation types', period_quotation_types_path %>
+</p>
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

@@ -1,0 +1,37 @@
+<%= form_with model: @market_symbol_precision, local: true do |f| %>
+
+	<% if @market_symbol_precision.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@market_symbol_precision.errors.count, 'error') %> prohibited this market symbol link from being saved:
+			</h2>
+			<ul>
+				<% @market_symbol_precision.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label 'Market' %><br />
+		<%= f.collection_select(:market_id, Market.all, :id, :name) %>	
+	</p>
+	<p>
+		<%= f.label 'Currency pair' %><br />
+		<%= f.collection_select(:currency_pair_id, CurrencyPair.all, :id, :name) %>
+	</p>
+	<p>
+		<%= f.label :tick_precision %><br />
+		<%= f.number_field :tick_precision %>
+	</p>
+	<p>
+		<%= f.label :volume_precision %><br />
+		<%= f.number_field :volume_precision %>
+	</p>
+
+	<p>
+		<%= f.submit 'Save market symbol link' %>
+	</p>
+	
+<% end %>

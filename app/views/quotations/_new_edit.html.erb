@@ -1,0 +1,58 @@
+<%= form_with model: @quotation, local: true do |f| %>
+
+	<% if @quotation.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@quotation.errors.count, 'error') %> prohibited this quotation from being saved:
+			</h2>
+			<ul>
+				<% @quotation.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label 'Market' %><br />
+		<%= f.collection_select(:market_id, Market.all, :id, :name) %>	
+	</p>
+	<p>
+		<%= f.label 'Currency pair' %><br />
+		<%= f.collection_select(:currency_pair_id, CurrencyPair.all, :id, :name) %>	
+	</p>
+	<p>
+		<%= f.label 'Period quotation type' %><br />
+		<%= f.collection_select(:period_quotation_type_id, PeriodQuotationType.all, :id, :short_name) %>	
+	</p>
+
+	<p>
+		<%= f.label :datetime_tick %><br />
+		<%= f.datetime_select :datetime_tick %>
+	</p>
+	<p>
+		<%= f.label :open_tick %><br />
+		<%= f.text_field :open_tick, size: 50 %>
+	</p>
+	<p>
+		<%= f.label :high_tick %><br />
+		<%= f.text_field :high_tick, size: 50 %>
+	</p>
+	<p>
+		<%= f.label :low_tick %><br />
+		<%= f.text_field :low_tick, size: 50 %>
+	</p>
+	<p>
+		<%= f.label :close_tick %><br />
+		<%= f.text_field :close_tick, size: 50 %>
+	</p>
+	<p>
+		<%= f.label :volume_tick %><br />
+		<%= f.text_field :volume_tick, size: 50 %>
+	</p>
+
+	<p>
+		<%= f.submit 'Save quotation' %>
+	</p>
+	
+<% end %>

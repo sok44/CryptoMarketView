@@ -1,0 +1,33 @@
+<h1>Listing period quotation types</h1>
+
+<p>
+	<%= link_to 'New period quotation type', new_period_quotation_type_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Long name</th>
+		<th>Short name</th>
+		<th>Time interval</th>
+		<th>Count intervals</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @period_quotation_types.each do |period_quotation_type| %>
+		<tr>
+			<td><%= period_quotation_type.long_name %></td>
+			<td><%= period_quotation_type.short_name %></td>
+			<td><%= period_quotation_type.time_interval.name %></td>
+			<td><%= period_quotation_type.count_intervals %></td>
+			<td><%= link_to 'Show', period_quotation_type_path(period_quotation_type) %></td>
+			<td><%= link_to 'Edit', edit_period_quotation_type_path(period_quotation_type) %></td>
+			<td><%= link_to 'Destroy', period_quotation_type_path(period_quotation_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

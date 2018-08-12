@@ -1,0 +1,33 @@
+<h1>Listing market symbol precisions</h1>
+
+<p>
+	<%= link_to 'New market symbol precisions', new_market_symbol_precision_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Market</th>
+		<th>Currency pair</th>
+		<th>Tick precision</th>
+		<th>Volume_precision</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @market_symbol_precisions.each do |market_symbol_precision| %>
+		<tr>
+			<td><%= market_symbol_precision.market.name %></td>
+			<td><%= market_symbol_precision.currency_pair.name %></td>
+			<td><%= market_symbol_precision.tick_precision %></td>
+			<td><%= market_symbol_precision.volume_precision %></td>
+			<td><%= link_to 'Show', market_symbol_precision_path(market_symbol_precision) %></td>
+			<td><%= link_to 'Edit', edit_market_symbol_precision_path(market_symbol_precision) %></td>
+			<td><%= link_to 'Destroy', market_symbol_precision_path(market_symbol_precision), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

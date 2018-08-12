@@ -1,0 +1,35 @@
+<h1>Listing currencies</h1>
+
+<p>
+	<%= link_to 'New currency', new_currency_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Full name</th>
+		<th>Short name</th>
+		<th>Tick precision</th>
+		<th>Volume precision</th>
+		<th>Is crypto</th>
+		<th>Description</th>
+		<th></th>
+	</tr>
+
+	<% @currencies.each do |currency| %>
+		<tr>
+			<td><%= currency.full_name %></td>
+			<td><%= currency.short_name %></td>
+			<td><%= currency.tick_precision %></td>
+			<td><%= currency.volume_precision %></td>
+			<td><%= currency.crypto %></td>
+			<td><%= currency.description %></td>
+			<td><%= link_to 'Show', currency_path(currency) %></td>
+			<td><%= link_to 'Edit', edit_currency_path(currency) %></td>
+			<td><%= link_to 'Destroy', currency_path(currency), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

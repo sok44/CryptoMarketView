@@ -1,0 +1,19 @@
+<h1>Show market currency pair name <%= @market_currency_pair_name.name %></h1>
+
+<p>
+	Market: <%= @market_currency_pair_name.market.name %> 
+</p>
+<p>
+	Currency pair: <%= @market_currency_pair_name.currency_pair.name %>
+</p>
+<p>
+	Name: <%= @market_currency_pair_name.name %>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_market_currency_pair_name_path(@market_currency_pair_name) %> |
+	<%= link_to 'Back to listing market currency pair names', market_currency_pair_names_path %>
+</p>
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

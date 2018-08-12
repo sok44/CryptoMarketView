@@ -1,0 +1,33 @@
+<%= form_with model: @market_currency_pair_name, local: true do |f| %>
+	
+	<% if @market_currency_pair_name.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@market_currency_pair_name.errors.count, 'error') %> prohibited this market currency pair name from being saved:
+			</h2>
+			<ul>
+				<% @market_currency_pair_name.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label 'Market' %><br />
+		<%= f.collection_select(:market_id, Market.all, :id, :name) %>	
+	</p>
+	<p>
+		<%= f.label 'Currency pair' %><br />
+		<%= f.collection_select(:currency_pair_id, CurrencyPair.all, :id, :name) %>	
+	</p>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %> 
+	</p>
+	
+	<p>
+		<%= f.submit 'Save market currency pair name' %>
+	</p>
+
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Show currency <%= @currency.full_name %></h1>
+
+<p>
+	Full name: <%= @currency.full_name %>
+</p>
+<p>
+	Short name: <%= @currency.short_name %>
+</p>
+<p>
+	Tick precision: <%= @currency.tick_precision %>
+</p>
+<p>
+	Volume precision: <%= @currency.volume_precision %>
+</p>
+<p>
+	Is crypto: <%= @currency.crypto %>
+</p>
+<p>
+	Description: <%= @currency.description %>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_currency_path(@currency) %> | 
+	<%= link_to 'Back to listing currencies', currencies_path %>
+</p>
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

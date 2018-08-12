@@ -1,0 +1,37 @@
+<h1>Show quotation</h1>
+
+<p>
+	Market: <%= @quotation.market.name %>
+</p>
+<p>
+	Currency pair: <%= @quotation.currency_pair.name %>
+</p>
+<p>
+	Period quotation type: <%= @quotation.period_quotation_type.short_name %>
+</p>
+<p>
+	Datetime tick: <%= @quotation.datetime_tick %>
+</p>
+<p>
+	Open tick: <%= @quotation.open_tick %>
+</p>
+<p>
+	High tick: <%= @quotation.high_tick %>
+</p>
+<p>
+	Low tick: <%= @quotation.low_tick %>
+</p>
+<p>
+	Close tick: <%= @quotation.close_tick %>
+</p>
+<p>
+	Volume tick: <%= @quotation.volume_tick %>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_quotation_path(@quotation) %> |
+	<%= link_to 'Back to listing currency pairs', quotations_path %>
+</p>
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

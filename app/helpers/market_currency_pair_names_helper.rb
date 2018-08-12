@@ -1,0 +1,2 @@
+module MarketCurrencyPairNamesHelper
+end

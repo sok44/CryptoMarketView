@@ -1,0 +1,31 @@
+<h1>Listing market currency pair names</h1>
+
+<p>
+	<%= link_to 'New market currency pair name', new_market_currency_pair_name_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Market</th>
+		<th>Currency pair</th>
+		<th>Name</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @market_currency_pair_names.each do |market_currency_pair_name| %>
+		<tr>
+			<td><%= market_currency_pair_name.market.name %></td>
+			<td><%= market_currency_pair_name.currency_pair.name %></td>
+			<td><%= market_currency_pair_name.name %></td>	
+			<td><%= link_to 'Show', market_period_name_path(market_currency_pair_name) %></td>
+			<td><%= link_to 'Edit', edit_market_currency_pair_name_path(market_currency_pair_name) %></td>		
+			<td><%= link_to 'Destroy', market_currency_pair_name_path(market_currency_pair_name), method: :delete, data: {confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

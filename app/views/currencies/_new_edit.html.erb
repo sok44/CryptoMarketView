@@ -1,0 +1,45 @@
+<%= form_with model: @currency, local: true do |f| %>
+	
+	<% if @currency.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@currency.errors.count, 'error') %> prohibited this currency from being saved:
+			</h2>
+			<ul>
+				<% @currency.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :short_name %><br />
+		<%= f.text_field :short_name %>
+	</p>
+	<p>
+		<%= f.label :full_name %><br />
+		<%= f.text_field :full_name %> 
+	</p>
+	<p>
+		<%= f.label :tick_precision %><br />
+		<%= f.number_field :tick_precision %>
+	</p>
+	<p>
+		<%= f.label :volume_precision %><br />
+		<%= f.number_field :volume_precision %>
+	</p>
+	<p>
+		<%= f.label :crypto %><br />
+		<%= f.check_box :crypto %>
+	</p>
+	<p>
+		<%= f.label :description %><br />
+		<%= f.text_area :description %>
+	</p>
+
+	<p>
+		<%= f.submit 'Save currency' %>
+	</p>
+
+<% end %>

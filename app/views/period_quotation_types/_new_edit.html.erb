@@ -1,0 +1,36 @@
+<%= form_with model: @period_quotation_type, local: true do |f| %>
+	
+	<% if @period_quotation_type.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@period_quotation_type.errors.count, 'error') %> prohibited this period quotation type from being saved:
+			</h2>
+			<ul>
+				<% @period_quotation_type.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :long_name %><br />
+		<%= f.text_field :long_name %>
+	</p>
+	<p>
+		<%= f.label :short_name %><br />
+		<%= f.text_field :short_name %> 
+	</p>
+	<p>
+		<%= f.label 'Time interval' %><br />
+		<%= f.collection_select(:time_interval_id, TimeInterval.all, :id, :name) %>	
+	</p>
+	<p>
+		<%= f.label :count_intervals %><br />
+		<%= f.text_field :count_intervals %> 
+	</p>
+	<p>
+		<%= f.submit 'Save period quotation type' %>
+	</p>
+
+<% end %>

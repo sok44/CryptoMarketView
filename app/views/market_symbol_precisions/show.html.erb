@@ -1,0 +1,22 @@
+<h1>Show market symbol precision</h1>
+
+<p>
+	Market: <%= @market_symbol_precision.market.name %>
+</p>
+<p>
+	Currency pair: <%= @market_symbol_precision.currency_pair.name %>
+</p>
+<p>
+	Tick precision: <%= @market_symbol_precision.tick_precision %>
+</p>
+<p>
+	Volume_precision: <%= @market_symbol_precision.volume_precision %>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_market_symbol_precision_path(@market_symbol_precision) %> |
+	<%= link_to 'Back to listing market symbol precisions', market_symbol_precisions_path %>
+</p>
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

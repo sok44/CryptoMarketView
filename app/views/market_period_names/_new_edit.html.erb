@@ -1,0 +1,33 @@
+<%= form_with model: @market_period_name, local: true do |f| %>
+	
+	<% if @market_period_name.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@market_period_name.errors.count, 'error') %> prohibited this market period name from being saved:
+			</h2>
+			<ul>
+				<% @market_period_name.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label 'Market' %><br />
+		<%= f.collection_select(:market_id, Market.all, :id, :name) %>	
+	</p>
+	<p>
+		<%= f.label 'Period quotation type' %><br />
+		<%= f.collection_select(:period_quotation_type_id, PeriodQuotationType.all, :id, :short_name) %>	
+	</p>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %> 
+	</p>
+	
+	<p>
+		<%= f.submit 'Save market period name' %>
+	</p>
+
+<% end %>

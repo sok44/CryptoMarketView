@@ -1,0 +1,19 @@
+<h1>Show market <%= @market.name %></h1>
+
+<p>
+	Name: <%= @market.name %>
+</p>
+<p>
+	Website: <%= @market.website %>
+</p>
+<p>
+	Adapter name: <%= @market.adapter_name %>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_market_path(@market) %> | 
+	<%= link_to 'Back to listing markets', markets_path %>
+</p>
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

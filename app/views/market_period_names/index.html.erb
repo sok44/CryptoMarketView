@@ -1,0 +1,31 @@
+<h1>Listing market period names</h1>
+
+<p>
+	<%= link_to 'New market period name', new_market_period_name_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Market</th>
+		<th>Period quotation type</th>
+		<th>Name</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @market_period_names.each do |market_period_name| %>
+		<tr>
+			<td><%= market_period_name.market.name %></td>
+			<td><%= market_period_name.period_quotation_type.short_name %></td>
+			<td><%= market_period_name.name %></td>	
+			<td><%= link_to 'Show', market_period_name_path(market_period_name) %></td>
+			<td><%= link_to 'Edit', edit_market_period_name_path(market_period_name) %></td>		
+			<td><%= link_to 'Destroy', market_period_name_path(market_period_name), method: :delete, data: {confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>

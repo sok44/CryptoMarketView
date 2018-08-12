@@ -1,0 +1,31 @@
+<h1>Listing currency pairs</h1>
+
+<p>
+	<%= link_to 'New currency pair', new_currency_pair_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Base currency</th>
+		<th>Quote currency</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @currency_pairs.each do |currency_pair| %>
+		<tr>
+			<td><%= currency_pair.name %></td>
+			<td><%= currency_pair.base_currency.full_name %> (<%= currency_pair.base_currency.short_name %>)</td>
+			<td><%= currency_pair.quote_currency.full_name %> (<%= currency_pair.quote_currency.short_name %>)</td>
+			<td><%= link_to 'Show', currency_pair_path(currency_pair) %></td>
+			<td><%= link_to 'Edit', edit_currency_pair_path(currency_pair) %></td>		
+			<td><%= link_to 'Destroy', currency_pair_path(currency_pair), method: :delete, data: {confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to 'Home page', root_path %>
+</p>
