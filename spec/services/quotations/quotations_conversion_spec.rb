@@ -4,15 +4,8 @@ describe Quotations::QuotationConversion do
 
   let(:testing_module) { Class.new.include(described_class).new }
 
-  let(:market) { Market.create(attributes_for(:market)) }
-  let(:base_currency) { Currency.create(attributes_for(:currency)) }
-  let(:quote_currency) do
-    Currency.create(attributes_for(:currency)) do |currency|
-      currency.short_name = 'ETH'
-      currency.full_name = 'Ethereum'
-    end
-  end
-  let(:currency_pair) { CurrencyPair.create(name: 'ETHBTC', base_currency_id: base_currency.id, quote_currency_id: quote_currency.id) }
+  let(:market) { create(:market) }
+  let(:currency_pair) { create(:currency_pair) }
 
   describe '#get_precision' do
     
@@ -20,30 +13,31 @@ describe Quotations::QuotationConversion do
 
       #get_precision(currency_pair_id, market_id, type_precision) 
       it 'Get tick_precision.' do
-        expect(testing_module.get_precision(currency_pair.id, market.id, :tick_precision)).to eq(quote_currency.tick_precision)
+        expect(testing_module.get_precision(currency_pair.id, market.id, :tick_precision)).to eq(currency_pair.quote_currency.tick_precision)
       end
 
       it 'Get volume_precision.' do
-        expect(testing_module.get_precision(currency_pair.id, market.id, :volume_precision)).to eq(quote_currency.volume_precision)
+        expect(testing_module.get_precision(currency_pair.id, market.id, :volume_precision)).to eq(currency_pair.quote_currency.volume_precision)
       end
     end
 
     context 'Precision get from market_symbol_precision.' do
 
-      let!(:market_symbol_precision) do
-        MarketSymbolPrecision.create(attributes_for(:market_symbol_precision)) do |market_symbol_precision|
-          market_symbol_precision.market_id = market.id
-          market_symbol_precision.currency_pair_id = currency_pair.id
-        end
-      end
+      #let!(:market_symbol_precision) do
+      #  MarketSymbolPrecision.create(attributes_for(:market_symbol_precision)) do |market_symbol_precision|
+      #    market_symbol_precision.market_id = market.id
+      #    market_symbol_precision.currency_pair_id = currency_pair.id
+      #  end
+      #end
 
-      #get_precision(currency_pair_id, market_id, type_precision) 
+      let(:market_symbol_precision) { create(:market_symbol_precision) }
+    
       it 'Get tick_precision.' do
-        expect(testing_module.get_precision(currency_pair.id, market.id, :tick_precision)).to eq(market_symbol_precision.tick_precision)
+        expect(testing_module.get_precision(market_symbol_precision.currency_pair.id, market_symbol_precision.market.id, :tick_precision)).to eq(market_symbol_precision.tick_precision)
       end
 
       it 'Get volume_precision.' do
-        expect(testing_module.get_precision(currency_pair.id, market.id, :volume_precision)).to eq(market_symbol_precision.volume_precision)
+        expect(testing_module.get_precision(market_symbol_precision.currency_pair.id, market_symbol_precision.market.id, :volume_precision)).to eq(market_symbol_precision.volume_precision)
       end
     end
 
