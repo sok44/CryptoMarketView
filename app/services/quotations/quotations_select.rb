@@ -43,12 +43,12 @@ module Quotations
         currency_pairs.each do |currency_pair|
 
           #В 99,9999% случаях перед запросом данных данные уже будут в базе, поэтому имеет смысл запросить все требуемые данные
-          quotations = Quotation.where_market(market.id).where_currency_pair(currency_pair.id).where_period_quotation_type(period_quotation_type_id).where_datetime_tick(select_datetimes).order_updated_desc(:desc)
-
-          return_quotations.concat(quotations)
+          quotations = Quotation.where_market(market.id).where_currency_pair(currency_pair.id).where_period_quotation_type(period_quotation_type_id).where_datetime_tick(select_datetimes).order_updated_desc(:desc).map{|quotation| Quotations::QuotationDecorator.new(quotation)}
 
           if quotations.count == count_last_quotations
             Rails.logger.tagged('QuotationsSelect', 'Completed') { Rails.logger.debug {"Все котировки выбраны из БД."} }
+            byebug
+            return_quotations.concat(quotations)
           elsif quotations.count < count_last_quotations
 
             #т.к. скорее всего котировки будут за все дни кроме последнего то имеет смысл сделать пред запрос только последнего дня, и если котировок не хватает делать уже запрос всех данных с бирж, за все дни.
@@ -64,22 +64,24 @@ module Quotations
                 
                 request_quotation = request_quotations.find {|request_quotation| request_quotation[:datetime_tick] == select_datetime}
                 if !request_quotation.nil?
-                  quotation = Quotation.new
-                  if Quotations::QuotationsSave.new(quotation, request_quotation).call
-                    return_quotations << quotation
-                  end
+                  #Можно сделать обший insert с игнорированием дибулей вместо new-save
+                  Quotations::QuotationsSave.new(Quotation.new, request_quotation).call
                 end
               end   
             end
-            #Можно сделать обший insert с игнорированием дибулей вместо new-save, но тогда придеться делать повторную выборку чтобы вывести на экран
-                
+            
+            #В 99,9999% случаях перед запросом данных данные уже будут в базе, поэтому данный повторный запрос будет запускаться один раз для конкретных паратметров запроса
+            byebug
+
+            quotations = Quotation.where_market(market.id).where_currency_pair(currency_pair.id).where_period_quotation_type(period_quotation_type_id).where_datetime_tick(select_datetimes).order_updated_desc(:desc).map{|quotation| Quotations::QuotationDecorator.new(quotation)}
+            return_quotations.concat(quotations)   
           else
             Rails.logger.tagged('QuotationsSelect', 'DuplicateError') { Rails.logger.debug {"Задвоение котировок в БД."} }
           end
         end
       end
 
-      return return_quotations.map{|quotation| Quotations::QuotationDecorator.new(quotation)}
+      return return_quotations
     end
 
     #Подготовка запрашиваемых дат

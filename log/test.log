@@ -6895,3 +6895,146 @@
   [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
   [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (79.0ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (79.0ms)[0m  [1m[31mDELETE FROM "markets";[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'markets';[0m
+  [1m[35m (80.0ms)[0m  [1m[31mDELETE FROM "currencies";[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currencies';[0m
+  [1m[35m (85.0ms)[0m  [1m[31mDELETE FROM "currency_pairs";[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'currency_pairs';[0m
+  [1m[35m (87.0ms)[0m  [1m[31mDELETE FROM "market_symbol_precisions";[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_symbol_precisions';[0m
+  [1m[35m (87.0ms)[0m  [1m[31mDELETE FROM "time_intervals";[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'time_intervals';[0m
+  [1m[35m (88.0ms)[0m  [1m[31mDELETE FROM "period_quotation_types";[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'period_quotation_types';[0m
+  [1m[35m (97.0ms)[0m  [1m[31mDELETE FROM "quotations";[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'quotations';[0m
+  [1m[35m (91.0ms)[0m  [1m[31mDELETE FROM "market_period_names";[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_period_names';[0m
+  [1m[35m (88.0ms)[0m  [1m[31mDELETE FROM "market_currency_pair_names";[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'market_currency_pair_names';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (21.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-13 15:52:18.799907"], ["updated_at", "2018-08-13 15:52:18.799907"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-13 15:52:18.904913"], ["updated_at", "2018-08-13 15:52:18.904913"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-13 15:52:18.976918"], ["updated_at", "2018-08-13 15:52:18.976918"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-13 15:52:18.980918"], ["updated_at", "2018-08-13 15:52:18.980918"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "time_intervals" ("name") VALUES (?)[0m  [["name", "day"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "period_quotation_types" ("short_name", "long_name", "time_interval_id", "count_intervals") VALUES (?, ?, ?, ?)[0m  [["short_name", "D1"], ["long_name", "1 day"], ["time_interval_id", 1], ["count_intervals", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (1.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (1.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (1.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (1.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPeriodQuotationType Load (1.0ms)[0m  [1m[34mSELECT  "period_quotation_types".* FROM "period_quotation_types" WHERE "period_quotation_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "quotations" ("currency_pair_id", "market_id", "period_quotation_type_id", "datetime_tick", "open_tick", "high_tick", "low_tick", "close_tick", "volume_tick") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["period_quotation_type_id", 1], ["datetime_tick", "2018-07-16 00:00:00"], ["open_tick", 7076000], ["high_tick", 7183100], ["low_tick", 7017000], ["close_tick", 7120400], ["volume_tick", 49558547000000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (42.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (21.0ms)[0m  [1m[32mINSERT INTO "markets" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "HitBTC"], ["website", "www.hitbtc.com"], ["created_at", "2018-08-13 15:52:19.447944"], ["updated_at", "2018-08-13 15:52:19.447944"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "BTC"], ["full_name", "Bitcoin"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-13 15:52:19.473946"], ["updated_at", "2018-08-13 15:52:19.473946"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "currencies" ("short_name", "full_name", "tick_precision", "volume_precision", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["short_name", "ETH"], ["full_name", "Ethereum"], ["tick_precision", 100000000], ["volume_precision", 1000000000], ["created_at", "2018-08-13 15:52:19.484947"], ["updated_at", "2018-08-13 15:52:19.484947"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "currency_pairs" ("name", "base_currency_id", "quote_currency_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ETHBTC"], ["base_currency_id", 1], ["quote_currency_id", 2], ["created_at", "2018-08-13 15:52:19.487947"], ["updated_at", "2018-08-13 15:52:19.487947"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "time_intervals" ("name") VALUES (?)[0m  [["name", "day"]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "period_quotation_types" ("short_name", "long_name", "time_interval_id", "count_intervals") VALUES (?, ?, ?, ?)[0m  [["short_name", "D1"], ["long_name", "1 day"], ["time_interval_id", 1], ["count_intervals", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPeriodQuotationType Load (0.0ms)[0m  [1m[34mSELECT  "period_quotation_types".* FROM "period_quotation_types" WHERE "period_quotation_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "quotations" ("currency_pair_id", "market_id", "period_quotation_type_id", "datetime_tick", "open_tick", "high_tick", "low_tick", "close_tick", "volume_tick") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["period_quotation_type_id", 1], ["datetime_tick", "2018-07-16 00:00:00"], ["open_tick", 7076000], ["high_tick", 7183100], ["low_tick", 7017000], ["close_tick", 7120400], ["volume_tick", 49558547000000]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (1.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (1.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" = ? AND "market_symbol_precisions"."market_id" = ? ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["currency_pair_id", 1], ["market_id", 1], ["LIMIT", 1]]
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurrency Load (0.0ms)[0m  [1m[34mSELECT  "currencies".* FROM "currencies" WHERE "currencies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mCurrencyPair Load (0.0ms)[0m  [1m[34mSELECT  "currency_pairs".* FROM "currency_pairs" WHERE "currency_pairs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMarket Load (0.0ms)[0m  [1m[34mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPeriodQuotationType Load (0.0ms)[0m  [1m[34mSELECT  "period_quotation_types".* FROM "period_quotation_types" WHERE "period_quotation_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "quotations" ("currency_pair_id", "market_id", "period_quotation_type_id", "datetime_tick", "open_tick", "high_tick", "low_tick", "close_tick", "volume_tick") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["currency_pair_id", 1], ["market_id", 1], ["period_quotation_type_id", 1], ["datetime_tick", "2018-07-16 00:00:00"], ["open_tick", 7076000], ["high_tick", 7183100], ["low_tick", 7017000], ["close_tick", 7120400], ["volume_tick", 49558547000000]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (45.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMarketSymbolPrecision Load (2.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (1.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMarketSymbolPrecision Load (0.0ms)[0m  [1m[34mSELECT  "market_symbol_precisions".* FROM "market_symbol_precisions" WHERE "market_symbol_precisions"."currency_pair_id" IS NULL AND "market_symbol_precisions"."market_id" IS NULL ORDER BY "market_symbol_precisions"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
