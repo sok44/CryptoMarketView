@@ -47,7 +47,7 @@ module Quotations
 
           if quotations.count == count_last_quotations
             Rails.logger.tagged('QuotationsSelect', 'Completed') { Rails.logger.debug {"Все котировки выбраны из БД."} }
-            byebug
+            #byebug
             return_quotations.concat(quotations)
           elsif quotations.count < count_last_quotations
 
@@ -71,7 +71,7 @@ module Quotations
             end
             
             #В 99,9999% случаях перед запросом данных данные уже будут в базе, поэтому данный повторный запрос будет запускаться один раз для конкретных паратметров запроса
-            byebug
+            #byebug
 
             quotations = Quotation.where_market(market.id).where_currency_pair(currency_pair.id).where_period_quotation_type(period_quotation_type_id).where_datetime_tick(select_datetimes).order_updated_desc(:desc).map{|quotation| Quotations::QuotationDecorator.new(quotation)}
             return_quotations.concat(quotations)   
